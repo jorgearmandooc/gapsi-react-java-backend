@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "e209318b-3097-4b4f-84f4-ac5e76e9469b",
+		"name": "GAPSI ECommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8257125"
+	},
+	"item": [
+		{
+			"name": "Proveedores",
+			"item": [
+				{
+					"name": "Cread",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Conten",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Proveedor 3\",\r\n    \"razonSocial\": \"Proveedor 2 Razon Social\",\r\n    \"direccion\": \"Avenida Siempreviva 742\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/proveedores",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"proveedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/proveedores?offset=0&pageSize=50",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"proveedores"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/proveedores/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"proveedores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/proveedores/2",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"proveedores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bienvenida",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/bievenida",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"bievenida"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": "http://127.0.0.1:8080",
+			"type": "string"
+		}
+	]
+}
