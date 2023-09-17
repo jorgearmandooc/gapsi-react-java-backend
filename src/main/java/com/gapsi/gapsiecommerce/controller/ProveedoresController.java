@@ -39,11 +39,12 @@ public class ProveedoresController {
     public HashMap<String,Object> getAllWithPagination(@RequestParam(name="draw") String draw, @RequestParam(name="start", defaultValue="0") String offset, @RequestParam(name="length", defaultValue="20") String pageSize){
         
         Page<Proveedores> pageProveedores = proveedoresService.getAllWithPagination( Integer.parseInt(offset), Integer.parseInt(pageSize) );
+        Long recordsTotal = pageProveedores.getTotalElements();
 
         HashMap<String,Object> map = new HashMap<>();
         map.put("draw", draw);
-        map.put("recordsTotal", 1000);
-        map.put("recordsFiltered", 1000);
+        map.put("recordsTotal", recordsTotal);
+        map.put("recordsFiltered", recordsTotal);
         map.put("data", pageProveedores.getContent());
 
         return map;

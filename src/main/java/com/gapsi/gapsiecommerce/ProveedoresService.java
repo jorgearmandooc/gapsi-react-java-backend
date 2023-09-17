@@ -30,7 +30,11 @@ public class ProveedoresService {
     }
 
     public Page<Proveedores> getAllWithPagination(Integer offset, Integer pageSize){
-        return proveedoresRepository.findAll( PageRequest.of(offset, pageSize));
+
+        Double B = (double)offset / pageSize;
+        Integer pageNumber = (int)Math.ceil( (double)B / 100);
+
+        return proveedoresRepository.findAll( PageRequest.of( pageNumber, pageSize));
     }
 
     public List<Proveedores> getByNombre(String nombre) {
