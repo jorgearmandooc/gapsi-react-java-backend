@@ -9,9 +9,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Page;
 
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("proveedores")
 public class ProveedoresController {
 
@@ -34,8 +36,19 @@ public class ProveedoresController {
     }
 
     @GetMapping
-    public Page<Proveedores> getAllWithPagination(@RequestParam(name="offset", defaultValue="0") String offset, @RequestParam(name="pageSize", defaultValue="20") String pageSize){
-        return proveedoresService.getAllWithPagination( Integer.parseInt(offset), Integer.parseInt(pageSize) );
+    public HashMap<String,Object> getAllWithPagination(@RequestParam(name="draw") String draw, @RequestParam(name="start", defaultValue="0") String offset, @RequestParam(name="length", defaultValue="20") String pageSize){
+        
+        Page<Proveedores> pageProveedores = proveedoresService.getAllWithPagination( Integer.parseInt(offset), Integer.parseInt(pageSize) );
+
+        HashMap<String,Object> map = new HashMap<>();
+        map.put("draw", draw);
+        map.put("recordsTotal", 1000);
+        map.put("recordsFiltered", 1000);
+        map.put("data", pageProveedores.getContent());
+
+        return map;
+
+        //return proveedoresService.getAllWithPagination( Integer.parseInt(offset), Integer.parseInt(pageSize) );
     }
 
     @GetMapping("{idProveedor}")
