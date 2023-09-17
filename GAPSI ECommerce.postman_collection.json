@@ -47,7 +47,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{endpoint}}/proveedores?offset=0&pageSize=50",
+							"raw": "{{endpoint}}/proveedores?draw=1&start=0&length=50",
 							"host": [
 								"{{endpoint}}"
 							],
@@ -56,11 +56,15 @@
 							],
 							"query": [
 								{
-									"key": "offset",
+									"key": "draw",
+									"value": "1"
+								},
+								{
+									"key": "start",
 									"value": "0"
 								},
 								{
-									"key": "pageSize",
+									"key": "length",
 									"value": "50"
 								}
 							]
