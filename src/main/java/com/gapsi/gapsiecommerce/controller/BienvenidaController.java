@@ -14,7 +14,7 @@ public class BienvenidaController {
         HashMap<String, String> map = new HashMap<>();
         map.put("bienvenida", "Bienvenido Candidato 01");
         map.put("version", "0.0.1");
-        map.put("img", "https://picsum.photos/200/200");
+        map.put("img", "https://picsum.photos/200/200.jpg");
         return map;
     }
 }
