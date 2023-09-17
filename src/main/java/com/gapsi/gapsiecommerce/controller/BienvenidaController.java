@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("bievenida")
+@RequestMapping("bienvenida")
 public class BienvenidaController {
 
     @GetMapping

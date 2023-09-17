@@ -120,12 +120,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{endpoint}}/bievenida",
+					"raw": "{{endpoint}}/bienvenida",
 					"host": [
 						"{{endpoint}}"
 					],
 					"path": [
-						"bievenida"
+						"bienvenida"
 					]
 				}
 			},
